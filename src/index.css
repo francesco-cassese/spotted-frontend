@@ -1,4 +1,27 @@
-* {
-  margin: 0;
-  font-family: system-ui, sans-serif;
+:root {
+  /* Colors */
+  --color-background: #F7F3EC;
+  --color-primary: #E8472A;
+
+  /* Typography */
+  --font-family-base: 'Inter', Roboto, sans-serif;
+  --font-family-heading: 'Fraunces', serif;
+}
+
+body {
+  background-color: var(--color-background);
+  font-family: var(--font-family-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+}
+
+img {
+  display: block;
 }

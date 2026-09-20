@@ -26,6 +26,10 @@ function BusinessesList() {
 
     if (!businesses) return null;
 
+    const filteredBusinesses = businesses.filter(business => (
+        selectedCategory === null || business.category.id === selectedCategory
+    ));
+
     return (
         <>
             {categoriesLoading && <LoadingMessage message="Caricamento delle categorie..." />}
@@ -43,8 +47,16 @@ function BusinessesList() {
                     onSelect={setSelectedCategory} />
             )}
 
+            {filteredBusinesses.length === 0 && (
+                <p className="text-center text-muted">
+                    {selectedCategory === null
+                        ? "Non ci sono ancora attività da mostrare."
+                        : "Nessuna attività trovata in questa categoria."}
+                </p>
+            )}
+
             <ul className={`row g-3 ${styles.businessesList}`}>
-                {businesses.map(business => (
+                {filteredBusinesses.map(business => (
                     <li key={business.id} className="col-12 col-md-6 col-lg-4 d-flex"><CardBusiness {...business} /></li>
                 ))}
             </ul>

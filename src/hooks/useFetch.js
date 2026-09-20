@@ -10,6 +10,8 @@ function useFetch(endpoint) {
         async function fetchData() {
             try {
                 setLoading(true);
+                // Azzero l'errore di una richiesta precedente, sennò resterebbe anche se la nuova va bene
+                setError(null);
                 const result = await apiFetch(endpoint);
                 setData(result);
             } catch (err) {

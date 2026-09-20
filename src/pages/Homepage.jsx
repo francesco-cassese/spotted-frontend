@@ -1,5 +1,5 @@
-import BusinessesList from "../components/BusinessesList"
-import Header from "../components/Header"
+import BusinessesList from "../components/BusinessesList";
+import Header from "../components/Header";
 
 function Homepage() {
     return (
@@ -13,6 +13,6 @@ function Homepage() {
                 <BusinessesList />
             </div>
         </>
-    )
+    );
 }
-export default Homepage
+export default Homepage;

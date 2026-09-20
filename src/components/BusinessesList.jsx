@@ -71,6 +71,6 @@ function BusinessesList() {
                 ))}
             </ul>
         </>
-    )
+    );
 }
-export default BusinessesList
+export default BusinessesList;

@@ -38,6 +38,6 @@ function BusinessDetail() {
 
     return (
         <div>BusinessDetail</div>
-    )
+    );
 }
-export default BusinessDetail
+export default BusinessDetail;

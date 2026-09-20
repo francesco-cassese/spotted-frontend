@@ -12,7 +12,7 @@ function App() {
         <Route path="/businesses/:slug" element={<BusinessDetail />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

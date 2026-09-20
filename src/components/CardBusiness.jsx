@@ -12,6 +12,6 @@ function CardBusiness({ cover_image_url, name, category, address }) {
                 <address className='mb-0 text-muted small'><i className='bi bi-geo-alt'></i> {address}</address>
             </div>
         </div>
-    )
+    );
 }
-export default CardBusiness
+export default CardBusiness;

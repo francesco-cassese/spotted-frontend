@@ -9,6 +9,6 @@ function ErrorMessage({ title, message, error, children }) {
             <p className="small text-danger">{error}</p>
             {children}
         </div>
-    )
+    );
 }
-export default ErrorMessage
+export default ErrorMessage;

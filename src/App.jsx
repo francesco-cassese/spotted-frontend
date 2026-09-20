@@ -1,9 +1,14 @@
-import Homepage from "./pages/Homepage.jsx"
+import { Routes, Route } from "react-router-dom";
+import Homepage from "./pages/Homepage.jsx";
+import BusinessDetail from "./pages/BusinessDetail.jsx";
 
 function App() {
   return (
     <>
-      <Homepage />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/businesses/:slug" element={<BusinessDetail />} />
+      </Routes>
     </>
   )
 }

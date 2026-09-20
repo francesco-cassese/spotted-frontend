@@ -8,11 +8,14 @@ import ErrorMessage from "./ErrorMessage.jsx";
 
 function BusinessesList() {
 
+    // Chiamo useFetch due volte: una per i business e una per le categorie.
+    // A loading ed error ho dato nomi diversi per le due chiamate, sennò si confondevano
     const { data: businesses, loading: businessesLoading, error: businessesError } = useFetch('/businesses');
     const { data: categories, loading: categoriesLoading, error: categoriesError } = useFetch('/categories');
 
     const [selectedCategory, setSelectedCategory] = useState(null);
 
+    // Se i business non arrivano non ho niente da mostrare, quindi fermo qui la pagina
     if (businessesLoading) return <LoadingMessage message="Caricamento in corso..." />;
 
     if (businessesError) {
@@ -26,12 +29,16 @@ function BusinessesList() {
 
     if (!businesses) return null;
 
+    // Il filtro lo metto qui perché prima businesses poteva essere ancora null.
+    // Se è selezionata "Tutte" tengo tutti i business, altrimenti solo quelli della categoria cliccata.
+    // filter() crea una nuova lista e non cambia quella originale, così con "Tutte" li ho ancora tutti
     const filteredBusinesses = businesses.filter(business => (
         selectedCategory === null || business.category.id === selectedCategory
     ));
 
     return (
         <>
+            {/* Se le categorie non arrivano la pagina funziona lo stesso, mostro solo un avviso */}
             {categoriesLoading && <LoadingMessage message="Caricamento delle categorie..." />}
 
             {categoriesError && (
@@ -40,6 +47,7 @@ function BusinessesList() {
                 </div>
             )}
 
+            {/* Mostro il filtro solo quando le categorie sono arrivate, sennò va in errore perché sono ancora null */}
             {categories && (
                 <CategoryFilter
                     categories={categories}
@@ -47,6 +55,7 @@ function BusinessesList() {
                     onSelect={setSelectedCategory} />
             )}
 
+            {/* Scrivo length === 0 e non solo la length, perché con 0 React scriverebbe un "0" nella pagina */}
             {filteredBusinesses.length === 0 && (
                 <p className="text-center text-muted">
                     {selectedCategory === null
@@ -57,6 +66,7 @@ function BusinessesList() {
 
             <ul className={`row g-3 ${styles.businessesList}`}>
                 {filteredBusinesses.map(business => (
+                    // Come key uso l'id di ogni business. Con {...business} passo alla card tutti i dati del business
                     <li key={business.id} className="col-12 col-md-6 col-lg-4 d-flex"><CardBusiness {...business} /></li>
                 ))}
             </ul>

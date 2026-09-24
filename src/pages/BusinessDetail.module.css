@@ -1,0 +1,66 @@
+/* Fascia a tutta larghezza, stessa della hero della Homepage */
+.band {
+    background-color: var(--color-band);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* La foto si vede intera, senza ritagli: altezza massima 400px e larghezza che segue le proporzioni */
+.cover {
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* fit-content: il wrapper è largo quanto la foto (non tutto il container), così il badge
+   finisce sull'angolo della foto e non sul bordo della pagina. margin auto lo centra */
+.coverWrapper {
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Badge sull'angolo in alto a destra: il translate lo fa sporgere un po' fuori dalla foto.
+   Verso destra sporge poco (12%), così resta dentro il margine del container e non compare lo scroll orizzontale */
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 88px;
+    height: 88px;
+    transform: translate(12%, -30%);
+}
+
+/* Riquadro delle informazioni: bianco caldo al posto del grigio di bg-light */
+.infoBox {
+    background-color: #FFFDF9;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Bootstrap colora i link di blu: qui li rendo del colore del brand */
+.link {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.link:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.icon {
+    color: var(--color-primary);
+}
+
+.categoryPill {
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.traitPill {
+    border: 1px solid #212529;
+}

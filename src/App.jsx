@@ -1,10 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage.jsx";
 import BusinessDetail from "./pages/BusinessDetail.jsx";
+import Header from "./components/Header.jsx";
 
 function App() {
   return (
     <>
+      <Header />
       {/* Ogni Route collega un indirizzo a una pagina. :slug è la parte che cambia
           (come {slug} in routes/api.php) e nella pagina la leggo con useParams */}
       <Routes>

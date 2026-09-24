@@ -1,0 +1,35 @@
+/* Banner a tutta larghezza, con un beige un po' più scuro dello sfondo della pagina */
+.hero {
+    background-color: var(--color-band);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.eyebrow {
+    color: var(--color-primary);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.heroButton {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 50rem;
+    text-decoration: none;
+    transition: opacity 0.15s;
+}
+
+.heroButton:hover {
+    color: #fff;
+    opacity: 0.9;
+}
+
+/* Altezza massima e object-fit cover: la hero non cresce troppo e la foto non si deforma */
+.heroImage {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+}

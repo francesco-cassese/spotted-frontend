@@ -5,6 +5,7 @@ import { useState } from "react";
 import CategoryFilter from "./CategoryFilter.jsx";
 import LoadingMessage from "./LoadingMessage.jsx";
 import ErrorMessage from "./ErrorMessage.jsx";
+import { Link } from "react-router-dom";
 
 function BusinessesList() {
 
@@ -67,7 +68,9 @@ function BusinessesList() {
             <ul className={`row g-3 ${styles.businessesList}`}>
                 {filteredBusinesses.map(business => (
                     // Come key uso l'id di ogni business. Con {...business} passo alla card tutti i dati del business
-                    <li key={business.id} className="col-12 col-md-6 col-lg-4 d-flex"><CardBusiness {...business} /></li>
+                    <li key={business.id} className="col-12 col-md-6 col-lg-4 d-flex">
+                        <Link to={`/businesses/${business.slug}`} className="text-decoration-none"><CardBusiness {...business} /></Link>
+                    </li>
                 ))}
             </ul>
         </>

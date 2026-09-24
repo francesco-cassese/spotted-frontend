@@ -9,6 +9,12 @@
     object-fit: cover;
 }
 
+/* Se il nome va su due righe, text-wrap: balance le rende più uguali: così il pallino
+   resta vicino all'ultima parola e non finisce da solo su una riga */
+.title {
+    text-wrap: balance;
+}
+
 .bullet {
     display: inline-block;
     width: 8px;

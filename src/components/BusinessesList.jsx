@@ -69,7 +69,9 @@ function BusinessesList() {
                 {filteredBusinesses.map(business => (
                     // Come key uso l'id di ogni business. Con {...business} passo alla card tutti i dati del business
                     <li key={business.id} className="col-12 col-md-6 col-lg-4 d-flex">
-                        <Link to={`/businesses/${business.slug}`} className="text-decoration-none"><CardBusiness {...business} /></Link>
+                        {/* w-100: il Link occupa tutta la colonna. La card dentro ha h-100 e così tutte le card
+                            di una riga sono alte uguali (il li è d-flex, quindi il Link si allunga) */}
+                        <Link to={`/businesses/${business.slug}`} className="text-decoration-none w-100"><CardBusiness {...business} /></Link>
                     </li>
                 ))}
             </ul>

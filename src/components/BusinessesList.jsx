@@ -16,8 +16,10 @@ function BusinessesList() {
 
     const [selectedCategory, setSelectedCategory] = useState(null);
 
+    // Aspetto che arrivino sia i business sia le categorie prima di mostrare la pagina:
+    // così filtro e card compaiono insieme e la lista non si sposta quando arrivano le categorie.
     // Se i business non arrivano non ho niente da mostrare, quindi fermo qui la pagina
-    if (businessesLoading) return <LoadingMessage message="Caricamento in corso..." />;
+    if (businessesLoading || categoriesLoading) return <LoadingMessage message="Caricamento in corso..." />;
 
     if (businessesError) {
         return (
@@ -40,8 +42,6 @@ function BusinessesList() {
     return (
         <>
             {/* Se le categorie non arrivano la pagina funziona lo stesso, mostro solo un avviso */}
-            {categoriesLoading && <LoadingMessage message="Caricamento delle categorie..." />}
-
             {categoriesError && (
                 <div className="alert alert-warning small" role="alert">
                     Non è stato possibile caricare le categorie. Puoi comunque consultare tutte le attività.

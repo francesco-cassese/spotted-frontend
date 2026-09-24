@@ -1,3 +1,5 @@
+import styles from './CategoryFilter.module.css';
+
 function CategoryFilter({ categories, selectedCategory, onSelect }) {
     return (
         <ul className="list-unstyled d-flex flex-wrap gap-2 mb-4">
@@ -5,7 +7,7 @@ function CategoryFilter({ categories, selectedCategory, onSelect }) {
                 Quando la clicco passo null, cioè nessun filtro */}
             <li>
                 <button
-                    className={`btn rounded-pill ${selectedCategory === null ? "btn-primary" : "btn-outline-primary"}`}
+                    className={`${styles.pill} ${selectedCategory === null ? styles.active : styles.inactive}`}
                     onClick={() => onSelect(null)}>
                     Tutte
                 </button>
@@ -17,7 +19,7 @@ function CategoryFilter({ categories, selectedCategory, onSelect }) {
             {categories.map(category => (
                 <li key={category.id}>
                     <button
-                        className={`btn rounded-pill ${selectedCategory === category.id ? "btn-primary" : "btn-outline-primary"}`}
+                        className={`${styles.pill} ${selectedCategory === category.id ? styles.active : styles.inactive}`}
                         onClick={() => onSelect(category.id)}>
                         {category.name}
                     </button>

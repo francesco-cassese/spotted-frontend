@@ -1,0 +1,25 @@
+.pill {
+    border: 1px solid var(--color-primary);
+    border-radius: 50rem;
+    padding: 6px 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+/* Categoria selezionata: pieno */
+.active {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+/* Non selezionata: solo bordo, si riempie al passaggio del mouse */
+.inactive {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.inactive:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}

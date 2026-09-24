@@ -14,6 +14,16 @@ Il progetto è l'esame finale del corso Full Stack.
 - **Messaggi di caricamento e di errore** per ogni richiesta all'API (anche se il backend è spento o lo slug non esiste)
 - Layout adattabile allo schermo, con la griglia di Bootstrap
 
+## Screenshot
+
+**Homepage**: banner, filtro per categoria ed elenco delle attività.
+
+![Homepage](docs/screenshots/home.jpg)
+
+**Dettaglio di un'attività**: foto, categoria, tratti distintivi, storia e contatti.
+
+![Dettaglio di un'attività](docs/screenshots/detail.jpg)
+
 ## Stack tecnologico
 
 - [React](https://react.dev/) 19
@@ -115,6 +125,7 @@ src/
   assets/                immagini importate dal codice
   index.css              variabili di colore e stili globali
 public/                  logo e favicon
+docs/screenshots/        immagini usate in questo README
 ```
 
 Ogni componente ha il suo file `.module.css` accanto.

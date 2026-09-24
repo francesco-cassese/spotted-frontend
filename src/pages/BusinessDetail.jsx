@@ -96,7 +96,7 @@ function BusinessDetail() {
                 </div>
 
                 <hr className="my-4" />
-                <Link to="/" className={detailStyles.link}>
+                <Link to="/" className={`d-inline-block mb-4 ${detailStyles.link}`}>
                     <i className="bi bi-arrow-left"></i> Torna alle attività
                 </Link>
             </div>

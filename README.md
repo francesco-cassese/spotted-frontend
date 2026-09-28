@@ -10,7 +10,7 @@ Il progetto è l'esame finale del corso Full Stack.
 
 - **Homepage** con un banner di presentazione e l'elenco di tutte le attività
 - **Filtro per categoria**: cliccando una categoria la lista mostra solo le attività di quella categoria; "Tutte" toglie il filtro
-- **Pagina di dettaglio** di ogni attività, raggiungibile da un indirizzo leggibile (`/businesses/panificio-il-grano-antico`): foto, categoria, tratti distintivi, storia e, quando ci sono, indirizzo, contatto telefonico e link al sito web (alcune attività non hanno una sede, perché lavorano a domicilio o vendono solo online, e alcune non hanno ancora una foto)
+- **Pagina di dettaglio** di ogni attività, raggiungibile da un indirizzo leggibile (`/businesses/panificio-il-grano-antico`): foto, categoria, tratti distintivi, storia, telefono e, quando ci sono, indirizzo e link al sito web (alcune attività non hanno una sede, perché lavorano a domicilio o vendono solo online, e alcune non hanno ancora una foto)
 - **Messaggi di caricamento e di errore** per ogni richiesta all'API (anche se il backend è spento o lo slug non esiste)
 - Layout adattabile allo schermo, con la griglia di Bootstrap
 

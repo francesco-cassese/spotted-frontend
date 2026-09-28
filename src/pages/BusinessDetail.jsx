@@ -41,19 +41,22 @@ function BusinessDetail() {
 
     return (
         <>
-            {/* Fascia a tutta larghezza come nella hero: sta fuori dal container, e la foto sta dentro un container */}
-            <section className={`${detailStyles.band} py-5`}>
-                <div className="container">
-                    {/* Il wrapper è position: relative, così il badge (position: absolute) si posiziona rispetto alla foto */}
-                    <div className={detailStyles.coverWrapper}>
-                        <img
-                            className={`${detailStyles.cover} rounded-4`}
-                            src={business.cover_image_url}
-                            alt={business.name} />
-                        <img className={detailStyles.badge} src={spottedBadge} alt="Spotted" />
+            {/* Fascia a tutta larghezza come nella hero: sta fuori dal container, e la foto sta dentro un container.
+                La foto può mancare (colonna nullable), quindi senza foto non mostro nemmeno la fascia */}
+            {business.cover_image_url && (
+                <section className={`${detailStyles.band} py-5`}>
+                    <div className="container">
+                        {/* Il wrapper è position: relative, così il badge (position: absolute) si posiziona rispetto alla foto */}
+                        <div className={detailStyles.coverWrapper}>
+                            <img
+                                className={`${detailStyles.cover} rounded-4`}
+                                src={business.cover_image_url}
+                                alt={business.name} />
+                            <img className={detailStyles.badge} src={spottedBadge} alt="Spotted" />
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            )}
 
             <div className="container mt-4">
                 <h1 className="text-center mt-4">{business.name}<span className={cardStyles.bullet}></span></h1>
@@ -82,13 +85,24 @@ function BusinessDetail() {
                     <div className="col-12 col-md-4">
                         <div className={`${detailStyles.infoBox} p-3`}>
                             <h2 className="fs-4">Informazioni</h2>
-                            <address className="mb-2"><i className={`bi bi-geo-alt ${detailStyles.icon}`}></i> {business.address}</address>
-                            {/* Il contatto può mancare (colonna nullable), quindi lo mostro solo se c'è.
-                                Tolgo gli spazi solo nell'href, così il link tel: funziona */}
+                            {/* Indirizzo, contatto e sito possono mancare (colonne nullable), quindi li mostro solo se ci sono.
+                                Ci sono attività senza sede, che lavorano a domicilio o solo online */}
+                            {business.address && (
+                                <address className="mb-2"><i className={`bi bi-geo-alt me-1 ${detailStyles.icon}`}></i>{business.address}</address>
+                            )}
+                            {/* Lo spazio tra icona e testo lo do con me-1 (margine a destra di Bootstrap).
+                                Tolgo gli spazi dal numero solo nell'href, così il link tel: funziona */}
                             {business.contact && (
-                                <p className="mb-0">
-                                    <i className={`bi bi-telephone ${detailStyles.icon}`}></i>{" "}
+                                <p className="mb-2">
+                                    <i className={`bi bi-telephone me-1 ${detailStyles.icon}`}></i>
                                     <a href={`tel:${business.contact.replaceAll(" ", "")}`} className={detailStyles.link}>{business.contact}</a>
+                                </p>
+                            )}
+                            {/* target="_blank" apre il sito in una nuova scheda, così l'utente non lascia Spotted */}
+                            {business.website && (
+                                <p className="mb-0">
+                                    <i className={`bi bi-globe me-1 ${detailStyles.icon}`}></i>
+                                    <a href={business.website} target="_blank" rel="noreferrer" className={detailStyles.link}>Visita il sito web</a>
                                 </p>
                             )}
                         </div>

@@ -85,19 +85,18 @@ function BusinessDetail() {
                     <div className="col-12 col-md-4">
                         <div className={`${detailStyles.infoBox} p-3`}>
                             <h2 className="fs-4">Informazioni</h2>
-                            {/* Indirizzo, contatto e sito possono mancare (colonne nullable), quindi li mostro solo se ci sono.
-                                Ci sono attività senza sede, che lavorano a domicilio o solo online */}
+                            {/* Indirizzo e sito possono mancare (colonne nullable), quindi li mostro solo se ci sono.
+                                Ci sono attività senza sede, che lavorano a domicilio o solo online.
+                                Il telefono invece è obbligatorio, quindi c'è sempre */}
                             {business.address && (
                                 <address className="mb-2"><i className={`bi bi-geo-alt me-1 ${detailStyles.icon}`}></i>{business.address}</address>
                             )}
                             {/* Lo spazio tra icona e testo lo do con me-1 (margine a destra di Bootstrap).
                                 Tolgo gli spazi dal numero solo nell'href, così il link tel: funziona */}
-                            {business.contact && (
-                                <p className="mb-2">
-                                    <i className={`bi bi-telephone me-1 ${detailStyles.icon}`}></i>
-                                    <a href={`tel:${business.contact.replaceAll(" ", "")}`} className={detailStyles.link}>{business.contact}</a>
-                                </p>
-                            )}
+                            <p className="mb-2">
+                                <i className={`bi bi-telephone me-1 ${detailStyles.icon}`}></i>
+                                <a href={`tel:${business.phone_number.replaceAll(" ", "")}`} className={detailStyles.link}>{business.phone_number}</a>
+                            </p>
                             {/* target="_blank" apre il sito in una nuova scheda, così l'utente non lascia Spotted */}
                             {business.website && (
                                 <p className="mb-0">

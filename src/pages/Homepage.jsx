@@ -14,7 +14,7 @@ function Homepage() {
                             <p className={`${styles.eyebrow} small mb-2`}>Artigiani locali</p>
                             <h1 className="display-5">Scopri le eccellenze del tuo quartiere.</h1>
                             <p className="fs-5">Artigiani, negozi e servizi selezionati, raccontati con cura.</p>
-                            {/* href="#attivita" fa scorrere la pagina fino all'elemento con id="attivita" */}
+
                             <a href="#attivita" className={styles.heroButton}>Esplora le attività</a>
                         </div>
                         <div className="col-12 col-md-5">

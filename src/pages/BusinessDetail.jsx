@@ -29,7 +29,7 @@ function BusinessDetail() {
                     title="Attività non trovata"
                     message="Non è stato possibile caricare questa attività."
                     error={error}>
-                    <Link to="/" className="btn btn-primary">Torna alla home</Link>
+                    <Link to="/" className={`btn ${detailStyles.button}`}>Torna alla home</Link>
                 </ErrorMessage>
             </div>
         );

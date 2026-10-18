@@ -55,6 +55,19 @@
     color: var(--color-primary);
 }
 
+/* Bottone pieno del brand: uso il colore del sito invece del blu di btn-primary */
+.button {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: #fff;
+    font-weight: 600;
+}
+
+.button:hover {
+    color: #fff;
+    opacity: 0.9;
+}
+
 .categoryPill {
     border: 1px solid var(--color-primary);
     color: var(--color-primary);

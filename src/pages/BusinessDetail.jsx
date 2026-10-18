@@ -79,7 +79,7 @@ function BusinessDetail() {
                 <div className="row g-4">
                     <div className="col-12 col-md-8">
                         <h2>La storia</h2>
-                        <p className="fs-5">{business.story}</p>
+                        <p className="fs-5">{business.story || "Storia non ancora disponibile."}</p>
                     </div>
 
                     <div className="col-12 col-md-4">

@@ -1,6 +1,6 @@
-# Spotted — Frontend
+# Uncovered — Frontend
 
-Sito pubblico di **Spotted**, una directory di piccole attività locali (negozi, artigiani, locali, servizi) raccontate con la loro storia, la categoria e i tratti che le rendono speciali.
+Sito pubblico di **Uncovered**, una directory di piccole attività locali (negozi, artigiani, locali, servizi) raccontate con la loro storia, la categoria e i tratti che le rendono speciali.
 
 È una single page application in **React** che legge i dati dall'API REST del backend Laravel ([`spotted`](https://github.com/francesco-cassese/spotted)). Questo repository contiene solo la parte pubblica: per creare e modificare i contenuti serve il backoffice del backend.
 

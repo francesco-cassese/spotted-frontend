@@ -4,7 +4,7 @@ import LoadingMessage from "../components/LoadingMessage.jsx";
 import ErrorMessage from "../components/ErrorMessage.jsx";
 import cardStyles from "../components/CardBusiness.module.css";
 import detailStyles from "./BusinessDetail.module.css";
-import spottedBadge from "../assets/spotted-badge.png";
+import spottedBadge from "../assets/uncovered-badge.png";
 
 function BusinessDetail() {
 
@@ -52,7 +52,7 @@ function BusinessDetail() {
                                 className={`${detailStyles.cover} rounded-4`}
                                 src={business.cover_image_url}
                                 alt={business.name} />
-                            <img className={detailStyles.badge} src={spottedBadge} alt="Spotted" />
+                            <img className={detailStyles.badge} src={spottedBadge} alt="Uncovered" />
                         </div>
                     </div>
                 </section>
@@ -97,7 +97,7 @@ function BusinessDetail() {
                                 <i className={`bi bi-telephone me-1 ${detailStyles.icon}`}></i>
                                 <a href={`tel:${business.phone_number.replaceAll(" ", "")}`} className={detailStyles.link}>{business.phone_number}</a>
                             </p>
-                            {/* target="_blank" apre il sito in una nuova scheda, così l'utente non lascia Spotted */}
+                            {/* target="_blank" apre il sito in una nuova scheda, così l'utente non lascia Uncovered */}
                             {business.website && (
                                 <p className="mb-0">
                                     <i className={`bi bi-globe me-1 ${detailStyles.icon}`}></i>

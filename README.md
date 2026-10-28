@@ -2,7 +2,7 @@
 
 Sito pubblico di **Uncovered**, una directory di piccole attività locali (negozi, artigiani, locali, servizi) raccontate con la loro storia, la categoria e i tratti che le rendono speciali.
 
-È una single page application in **React** che legge i dati dall'API REST del backend Laravel ([`spotted`](https://github.com/francesco-cassese/spotted)). Questo repository contiene solo la parte pubblica: per creare e modificare i contenuti serve il backoffice del backend.
+È una single page application in **React** che legge i dati dall'API REST del backend Laravel ([`uncovered-backend`](https://github.com/francesco-cassese/uncovered-backend)). Questo repository contiene solo la parte pubblica: per creare e modificare i contenuti serve il backoffice del backend.
 
 Il progetto è l'esame finale del corso Full Stack.
 
@@ -37,7 +37,7 @@ Il progetto è l'esame finale del corso Full Stack.
 
 - Node.js `^20.19` oppure `22.12` o superiore (richiesto da Vite 8)
 - [pnpm](https://pnpm.io/)
-- Il **backend** [`spotted`](https://github.com/francesco-cassese/spotted) installato e in esecuzione su `http://127.0.0.1:8000`, con il database popolato (`php artisan migrate --seed`)
+- Il **backend** [`uncovered-backend`](https://github.com/francesco-cassese/uncovered-backend) installato e in esecuzione su `http://127.0.0.1:8000`, con il database popolato (`php artisan migrate --seed`)
 
 ## Installazione e avvio
 

@@ -65,7 +65,7 @@ Il progetto è l'esame finale del corso Full Stack.
 
 ## Configurazione
 
-L'indirizzo dell'API è nel file `.env`, già presente nel repository:
+L'indirizzo dell'API si configura nel file `.env`, che non è nel repository: crealo copiando `.env.example` (`cp .env.example .env`):
 
 ```dotenv
 VITE_API_URL=http://127.0.0.1:8000/api
